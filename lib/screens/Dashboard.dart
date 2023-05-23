@@ -12,8 +12,8 @@ class Dashboard extends StatelessWidget {
         title: Text('Dashboard'.toUpperCase()),
         backgroundColor: Colors.blueGrey,
       ),
-      body: Center(
-        child: Text("Random value is: ${getNumber()}")
+      body: Image.network(
+        "https://th.bing.com/th/id/OIP.Izso9rDFXYlDrVxhMSpihgHaJQ?pid=ImgDet&rs=1",
       ),
     );
   }
