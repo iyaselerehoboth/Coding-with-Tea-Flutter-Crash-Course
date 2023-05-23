@@ -12,8 +12,17 @@ class Dashboard extends StatelessWidget {
         title: Text('Dashboard'.toUpperCase()),
         backgroundColor: Colors.blueGrey,
       ),
-      body: Image.network(
-        "https://th.bing.com/th/id/OIP.Izso9rDFXYlDrVxhMSpihgHaJQ?pid=ImgDet&rs=1",
+      body: Center(
+        child: IconButton(
+          icon: const Icon(
+            Icons.alarm_add_rounded,
+          ),
+          onPressed: () {},
+          iconSize: 100,
+          color: Colors.lightGreenAccent,
+          splashColor: Colors.white,
+          highlightColor: Colors.red,
+        ),
       ),
     );
   }
