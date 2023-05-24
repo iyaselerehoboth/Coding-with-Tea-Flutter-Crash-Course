@@ -9,18 +9,34 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreen,
-      body: Center(
-        child: IconButton(
-          icon: const Icon(
-            FontAwesomeIcons.angular,
+      body: Container(
+        width: 350.0,
+        height: 250.0,
+        padding: const EdgeInsets.all(20.0),
+        margin: const EdgeInsets.all(50.0),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          // borderRadius: BorderRadius.circular(10.0),
+          color: Colors.blueGrey,
+          border: Border.all(color: Colors.grey, width: 6.0,),
+          shape: BoxShape.circle,
+          image: const DecorationImage(
+            image: AssetImage("images/KAY-2733.JPG"),
+            fit: BoxFit.cover
           ),
-          onPressed: () {},
-          iconSize: 100,
-          color: Colors.lightGreenAccent,
-          splashColor: Colors.white,
-          highlightColor: Colors.red,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade900,
+              blurRadius: 7.0,
+              spreadRadius: 5.0,
+              offset: const Offset(4,4)
+            )
+          ]
         ),
+        /*child: const Text(
+          "Less Boring",
+          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+        ),*/
       ),
     );
   }
