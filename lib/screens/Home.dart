@@ -6,30 +6,37 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: TextButton(
-          //To disable a button, pass "null" in the onPressed property.
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
           onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.all(20.0),
-            fixedSize: const Size(300, 80),
-            textStyle:
-                const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-            //primary: Colors.yellow,
-            onPrimary: Colors.black87,
-            //elevation: 15,
-            shadowColor: Colors.yellow,
-            //side: const BorderSide(color: Colors.black87, width: 2),
-            //alignment: Alignment.bottomLeft,
-            shape: const StadiumBorder()
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text("Let's Begin"),
-              Icon(Icons.add_shopping_cart_outlined),
-            ],
-          ),
+        ),
+        title: const Text("Home"),
+        actions: [
+          //IconButton(icon: const Icon(Icons.shopping_cart), onPressed: () {}),
+          IconButton(icon: const Icon(Icons.search), onPressed: () {}),
+        ],
+        elevation: 0,
+        centerTitle: true,
+        backgroundColor: Colors.purple.withOpacity(0.7),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(20))
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text(
+              "AppBar Tutorial",
+              style: TextStyle(fontSize: 22),
+            ),
+            Text(
+              "Coding with Robo",
+              style:
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.purple),
+            )
+          ],
         ),
       ),
     );
