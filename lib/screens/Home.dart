@@ -6,62 +6,36 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Rows and Columns"), centerTitle: true),
-      body: Container(
-        child: Column(
-          children: [
-            Row(
-              children: const [
-                Expanded(child: Image(image: AssetImage("images/KAY-2733.JPG"), width: 120,)),
-                Expanded(flex: 2, child: Image(image: AssetImage("images/KAY-2733.JPG"), width: 120,)),
-                Expanded(flex: 3, child: Image(image: AssetImage("images/KAY-2733.JPG"), width: 120,)),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.star),
-                Icon(Icons.star),
-                Icon(Icons.star),
-                Icon(Icons.star_border),
-                Icon(Icons.star_border),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: const [
-                    Icon(
-                      Icons.phone,
-                      size: 35.0,
-                    ),
-                    Text("Phone")
-                  ],
-                ),
-                Column(
-                  children: const [
-                    Icon(
-                      Icons.alt_route,
-                      size: 35.0,
-                    ),
-                    Text("Route"),
-                  ],
-                ),
-                Column(
-                  children: const [
-                    Icon(
-                      Icons.share,
-                      size: 35.0,
-                    ),
-                    Text("Share"),
-                  ],
-                ),
-              ],
-            ),
-          ],
+        body: ListView(
+      itemExtent: 100.0,
+      reverse: false,
+      children: [
+        ListTile(
+          leading: const CircleAvatar(
+            backgroundColor: Colors.purple,
+            foregroundColor: Colors.yellow,
+            child: Icon(Icons.alarm_on_sharp),
+          ),
+          title: const Text("Sales"),
+          subtitle: const Text("Sales of the week"),
+          trailing: const Text("3500"),
+          onTap: () {},
+          tileColor: Colors.brown.shade50,
         ),
-      ),
-    );
+        const Divider(),
+        const ListTile(
+          leading: Icon(Icons.supervised_user_circle_outlined),
+          title: Text("Customers"),
+          subtitle: Text("Total Customers Visited"),
+          trailing: Text("200"),
+        ),
+        const ListTile(
+          leading: Icon(Icons.alarm_on_sharp),
+          title: Text("Profit"),
+          subtitle: Text("Profit of the week"),
+          trailing: Text("1500"),
+        ),
+      ],
+    ));
   }
 }
