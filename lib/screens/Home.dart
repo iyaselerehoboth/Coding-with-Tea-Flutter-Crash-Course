@@ -6,36 +6,59 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () {},
-        ),
-        title: const Text("Home"),
-        actions: [
-          //IconButton(icon: const Icon(Icons.shopping_cart), onPressed: () {}),
-          IconButton(icon: const Icon(Icons.search), onPressed: () {}),
-        ],
-        elevation: 0,
-        centerTitle: true,
-        backgroundColor: Colors.purple.withOpacity(0.7),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(bottom: Radius.circular(20))
-        ),
-      ),
-      body: Center(
+      appBar: AppBar(title: const Text("Rows and Columns"), centerTitle: true),
+      body: Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text(
-              "AppBar Tutorial",
-              style: TextStyle(fontSize: 22),
+          children: [
+            Row(
+              children: const [
+                Expanded(child: Image(image: AssetImage("images/KAY-2733.JPG"), width: 120,)),
+                Expanded(flex: 2, child: Image(image: AssetImage("images/KAY-2733.JPG"), width: 120,)),
+                Expanded(flex: 3, child: Image(image: AssetImage("images/KAY-2733.JPG"), width: 120,)),
+              ],
             ),
-            Text(
-              "Coding with Robo",
-              style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.purple),
-            )
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star_border),
+                Icon(Icons.star_border),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: const [
+                    Icon(
+                      Icons.phone,
+                      size: 35.0,
+                    ),
+                    Text("Phone")
+                  ],
+                ),
+                Column(
+                  children: const [
+                    Icon(
+                      Icons.alt_route,
+                      size: 35.0,
+                    ),
+                    Text("Route"),
+                  ],
+                ),
+                Column(
+                  children: const [
+                    Icon(
+                      Icons.share,
+                      size: 35.0,
+                    ),
+                    Text("Share"),
+                  ],
+                ),
+              ],
+            ),
           ],
         ),
       ),
