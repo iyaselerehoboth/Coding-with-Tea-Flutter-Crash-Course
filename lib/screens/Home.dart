@@ -1,65 +1,49 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
-
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  List<String> products = ["Bed", "Sofa", "Chair"];
-
-  List<String> productDetails = [
-    "King Size Bed",
-    "King Size Sofa",
-    "Wooden Chair"
-  ];
-
-  List<int> price = [3000, 2500, 1860];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Navigation Drawer"),
+        title: const Text("Rehoboth App"),
+        centerTitle: true,
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            const UserAccountsDrawerHeader(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        backgroundColor: Colors.black87,
+        foregroundColor: Colors.yellow,
+        //mini: true,
+        /*elevation: 10.0,
+        shape: BeveledRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+          side: const BorderSide(color: Colors.blue, width: 2.0, style: BorderStyle.solid)
+        )*/
+        child: const Icon(Icons.add),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
 
-              accountName: Text("Iyasele Rehoboth"),
-              accountEmail: Text("rehobothi@yahoo.com"),
-              currentAccountPicture: CircleAvatar(foregroundImage: AssetImage("images/KAY-2733.JPG"),),
-            ),
-            ListTile(leading: const Icon(Icons.home), title: const Text("Home"), onTap: (){},),
-            ListTile(leading: const Icon(Icons.shopping_cart), title: const Text("Shop"), onTap: (){},),
-            ListTile(leading: const Icon(Icons.favorite), title: const Text("Favorites"), onTap: (){},),
-            const Padding(
-              padding: EdgeInsets.all(14.0),
-              child: Text("Labels"),
-            ),
-            const Divider(),
-            ListTile(leading: const Icon(Icons.label), title: const Text("Red"), onTap: (){}),
-            ListTile(leading: const Icon(Icons.label), title: const Text("Green"), onTap: (){}),
-            ListTile(leading: const Icon(Icons.label), title: const Text("Blue"), onTap: (){}),
-          ],
-        ),
-      ),
-      body: ListView.builder(
-        itemCount: products.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: CircleAvatar(
-              child: Text(products[index][0]),
-            ),
-            title: Text(products[index]),
-            subtitle: Text(productDetails[index]),
-            trailing: Text(price[index].toString()),
-          );
-        },
+        backgroundColor: Colors.black87,
+        unselectedItemColor: Colors.white,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.call),
+            label: 'Calls',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.flight),
+            label: 'Flight',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart),
+              label: 'Cart'),
+        ],
+
       ),
     );
   }
+
 }
+
