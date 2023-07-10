@@ -28,9 +28,10 @@ class _HomeState extends State<Home> {
         child: ListView(
           children: [
             const UserAccountsDrawerHeader(
+
               accountName: Text("Iyasele Rehoboth"),
               accountEmail: Text("rehobothi@yahoo.com"),
-              currentAccountPicture: CircleAvatar(),
+              currentAccountPicture: CircleAvatar(foregroundImage: AssetImage("images/KAY-2733.JPG"),),
             ),
             ListTile(leading: const Icon(Icons.home), title: const Text("Home"), onTap: (){},),
             ListTile(leading: const Icon(Icons.shopping_cart), title: const Text("Shop"), onTap: (){},),
